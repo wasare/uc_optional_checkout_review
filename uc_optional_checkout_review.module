@@ -71,8 +71,10 @@ function uc_optional_checkout_review_form_alter(&$form, $form_state, $form_id) {
 
         // Add our submit handler.
         $form['#submit'][] = 'uc_optional_checkout_review_form_submit';
-        // And add our Javascript file to handle this submit button.
+        // And add our JavaScript file to handle this submit button.
         drupal_add_js(drupal_get_path('module', 'uc_optional_checkout_review') .'/uc_optional_checkout_review.js');
+        // Add the uc_cart css, since it contains the throbber styles that we are using in the JavaScript.
+        drupal_add_css(drupal_get_path('module', 'uc_cart') .'/uc_cart.css');
       }
       break;
 
